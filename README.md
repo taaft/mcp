@@ -11,6 +11,28 @@ It exposes:
 The MCP endpoint is `POST /mcp`. `GET /healthz` is an unauthenticated
 liveness endpoint.
 
+## Cursor plugin
+
+This repository is also a Cursor plugin. Its root `mcp.json` registers the
+public TAAFT MCP server:
+
+```text
+https://theresanaiforthat.com/mcp-server/
+```
+
+No token or plugin variable is required.
+
+For local plugin development:
+
+```bash
+mkdir -p ~/.cursor/plugins/local
+ln -s "$(pwd)" ~/.cursor/plugins/local/taaft
+```
+
+Then run **Developer: Reload Window** in Cursor and confirm that `taaft`
+appears under Customize. Remove or disable an existing manually configured
+`taaft` MCP entry while testing to avoid a duplicate server name.
+
 ## Prerequisites
 
 - Node.js 22+
