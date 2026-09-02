@@ -8,3 +8,6 @@ dist/
 .idea/
 .vscode/
 coverage/
+key.pem
+mcp-registry-key.pem
+mcp-registry-auth
