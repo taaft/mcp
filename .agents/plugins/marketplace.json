@@ -1,0 +1,20 @@
+{
+  "name": "taaft-plugins",
+  "interface": {
+    "displayName": "TAAFT Plugins"
+  },
+  "plugins": [
+    {
+      "name": "taaft",
+      "source": {
+        "source": "local",
+        "path": "./plugins/openai/taaft"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

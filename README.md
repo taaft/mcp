@@ -11,27 +11,106 @@ It exposes:
 The MCP endpoint is `POST /mcp`. `GET /healthz` is an unauthenticated
 liveness endpoint.
 
-## Cursor plugin
+## Install
 
-This repository is also a Cursor plugin. Its root `mcp.json` registers the
-public TAAFT MCP server:
+The public endpoint is:
 
 ```text
 https://theresanaiforthat.com/mcp-server/
 ```
 
-No token or plugin variable is required.
+It uses Streamable HTTP and requires no authentication.
 
-For local plugin development:
+### Cursor
+
+The repository root is a Cursor plugin. For local plugin development:
 
 ```bash
 mkdir -p ~/.cursor/plugins/local
 ln -s "$(pwd)" ~/.cursor/plugins/local/taaft
 ```
 
-Then run **Developer: Reload Window** in Cursor and confirm that `taaft`
-appears under Customize. Remove or disable an existing manually configured
-`taaft` MCP entry while testing to avoid a duplicate server name.
+Run **Developer: Reload Window**, then confirm `taaft` appears under
+Customize. Remove or disable a manually configured `taaft` server to avoid a
+duplicate name.
+
+### Claude
+
+Add the connector directly to Claude Code:
+
+```bash
+claude mcp add --transport http taaft \
+  https://theresanaiforthat.com/mcp-server/
+```
+
+Or install the Claude plugin from this repository:
+
+```bash
+claude plugin marketplace add taaft/mcp
+claude plugin install taaft@taaft-plugins
+```
+
+For Claude.ai and Claude Desktop, add a custom connector under
+**Customize → Connectors** using the public endpoint and authentication
+type **None**.
+
+### Codex
+
+Add the server directly to Codex CLI or the Codex IDE extension:
+
+```bash
+codex mcp add taaft \
+  --url https://theresanaiforthat.com/mcp-server/
+```
+
+For plugin-capable Codex surfaces:
+
+```bash
+codex plugin marketplace add taaft/mcp
+codex plugin add taaft@taaft-plugins
+```
+
+You can also install it interactively from `/plugins`. Codex IDE supports
+direct MCP configuration but does not currently install plugins.
+
+### ChatGPT
+
+Enable **Developer mode**, open **Plugins**, select **+**, and register:
+
+- URL: `https://theresanaiforthat.com/mcp-server/`
+- Authentication: **None**
+- Transport: **Streamable HTTP**
+
+The repository contains the Codex/OpenAI plugin package, but a ChatGPT plugin
+also needs an `.app.json` mapping to the `plugin_asdk_app...` identifier that
+ChatGPT creates when the endpoint is registered. That account-specific file
+cannot be generated before registration.
+
+### Visual Studio Code
+
+This repository includes `.vscode/mcp.json`. Opening the repository in VS Code
+loads the server at workspace scope. To install it globally without cloning:
+
+```bash
+code --add-mcp \
+  '{"name":"taaft","type":"http","url":"https://theresanaiforthat.com/mcp-server/"}'
+```
+
+A VS Code extension is unnecessary for a fixed remote endpoint. Public
+`@mcp` gallery inclusion is a separate, curated GitHub MCP Registry process.
+
+### Google Antigravity
+
+After cloning the repository:
+
+```bash
+mkdir -p ~/.gemini/config/plugins
+cp -R plugins/antigravity/taaft ~/.gemini/config/plugins/taaft
+```
+
+The plugin uses `serverUrl`, the current Antigravity key for remote MCP
+servers. No transport or authentication fields are needed. Restart
+Antigravity after copying the plugin.
 
 ## Prerequisites
 
@@ -69,7 +148,7 @@ Example client configuration:
 {
   "mcpServers": {
     "taaft": {
-      "url": "https://mcp.example.com/mcp"
+      "url": "https://theresanaiforthat.com/mcp-server/"
     }
   }
 }

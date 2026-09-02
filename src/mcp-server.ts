@@ -39,7 +39,7 @@ const readOnlyAnnotations = {
 export function createTaaftMcpServer(client: TaaftClient): McpServer {
   const server = new McpServer({
     name: "taaft",
-    version: "0.1.0",
+    version: "1.0.0",
   });
 
   server.registerTool(

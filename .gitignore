@@ -6,7 +6,8 @@ dist/
 *.log
 .DS_Store
 .idea/
-.vscode/
+.vscode/*
+!.vscode/mcp.json
 coverage/
 key.pem
 mcp-registry-key.pem

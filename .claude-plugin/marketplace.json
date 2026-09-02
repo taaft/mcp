@@ -1,0 +1,16 @@
+{
+  "name": "taaft-plugins",
+  "description": "Official TAAFT plugins for discovering AI tools.",
+  "owner": {
+    "name": "There's An AI For That",
+    "email": "razvan@theresanaiforthat.com"
+  },
+  "plugins": [
+    {
+      "name": "taaft",
+      "source": "./plugins/claude/taaft",
+      "description": "Search TAAFT for AI tools and retrieve public tool details.",
+      "version": "1.0.0"
+    }
+  ]
+}

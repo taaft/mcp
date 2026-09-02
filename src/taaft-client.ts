@@ -85,7 +85,7 @@ export class TaaftClient {
   private async request(url: URL): Promise<unknown> {
     const headers = new Headers({
       Accept: "application/json",
-      "User-Agent": "taaft-mcp-server/0.1.0",
+      "User-Agent": "taaft-mcp-server/1.0.0",
     });
 
     if (this.config.apiKey) {
