@@ -1,3 +1,19 @@
 {
-  "name": "taaft"
+  "name": "taaft",
+  "displayName": "There's An AI For That",
+  "version": "0.1.0",
+  "description": "Find the latest and best AI tools, models, and repositories from TAAFT.",
+  "author": {
+    "name": "There's An AI For That",
+    "email": "razvan@theresanaiforthat.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai-tools",
+    "discovery",
+    "search",
+    "mcp",
+    "taaft"
+  ],
+  "logo": "assets/logo.png"
 }
