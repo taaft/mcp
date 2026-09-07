@@ -1,6 +1,6 @@
 {
   "name": "@taaft/mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Remote MCP server for the TAAFT AI tools directory",
   "type": "module",

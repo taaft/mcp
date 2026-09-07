@@ -10,7 +10,7 @@
       "name": "taaft",
       "source": "./plugins/claude/taaft",
       "description": "Search TAAFT for AI tools and retrieve public tool details.",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

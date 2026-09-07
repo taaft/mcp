@@ -4,8 +4,8 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const endpoint = "https://theresanaiforthat.com/mcp-server/";
-const version = "1.0.0";
+const endpoint = "https://theresanaiforthat.com/mcp/";
+const version = "1.0.1";
 
 function readJson(relativePath) {
   return JSON.parse(readFileSync(resolve(root, relativePath), "utf8"));
@@ -66,5 +66,12 @@ const antigravity = readJson(
 assert.deepEqual(antigravity.mcpServers?.taaft, {
   serverUrl: endpoint,
 });
+
+const grokConfig = readFileSync(
+  resolve(root, ".grok/config.toml"),
+  "utf8",
+);
+assert.match(grokConfig, /paths = \["\.\/plugins\/claude\/taaft"\]/);
+assert.match(grokConfig, /enabled = \["taaft"\]/);
 
 console.log("Cross-client packaging validation passed.");

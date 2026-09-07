@@ -16,7 +16,7 @@ liveness endpoint.
 The public endpoint is:
 
 ```text
-https://theresanaiforthat.com/mcp-server/
+https://theresanaiforthat.com/mcp/
 ```
 
 It uses Streamable HTTP and requires no authentication.
@@ -40,7 +40,7 @@ Add the connector directly to Claude Code:
 
 ```bash
 claude mcp add --transport http taaft \
-  https://theresanaiforthat.com/mcp-server/
+  https://theresanaiforthat.com/mcp/
 ```
 
 Or install the Claude plugin from this repository:
@@ -60,7 +60,7 @@ Add the server directly to Codex CLI or the Codex IDE extension:
 
 ```bash
 codex mcp add taaft \
-  --url https://theresanaiforthat.com/mcp-server/
+  --url https://theresanaiforthat.com/mcp/
 ```
 
 For plugin-capable Codex surfaces:
@@ -77,7 +77,7 @@ direct MCP configuration but does not currently install plugins.
 
 Enable **Developer mode**, open **Plugins**, select **+**, and register:
 
-- URL: `https://theresanaiforthat.com/mcp-server/`
+- URL: `https://theresanaiforthat.com/mcp/`
 - Authentication: **None**
 - Transport: **Streamable HTTP**
 
@@ -93,7 +93,7 @@ loads the server at workspace scope. To install it globally without cloning:
 
 ```bash
 code --add-mcp \
-  '{"name":"taaft","type":"http","url":"https://theresanaiforthat.com/mcp-server/"}'
+  '{"name":"taaft","type":"http","url":"https://theresanaiforthat.com/mcp/"}'
 ```
 
 A VS Code extension is unnecessary for a fixed remote endpoint. Public
@@ -111,6 +111,26 @@ cp -R plugins/antigravity/taaft ~/.gemini/config/plugins/taaft
 The plugin uses `serverUrl`, the current Antigravity key for remote MCP
 servers. No transport or authentication fields are needed. Restart
 Antigravity after copying the plugin.
+
+### Grok
+
+Grok Build automatically loads `.grok/config.toml`, which enables the
+Claude-compatible TAAFT plugin already shipped in this repository. To add the
+remote server directly instead:
+
+```bash
+grok mcp add --transport http taaft \
+  https://theresanaiforthat.com/mcp/
+```
+
+Grok can also load the packaged plugin explicitly:
+
+```bash
+grok --plugin-dir ./plugins/claude/taaft
+```
+
+Use `grok inspect` or `grok mcp doctor taaft` to verify discovery and
+connectivity.
 
 ## Prerequisites
 
@@ -148,7 +168,7 @@ Example client configuration:
 {
   "mcpServers": {
     "taaft": {
-      "url": "https://theresanaiforthat.com/mcp-server/"
+      "url": "https://theresanaiforthat.com/mcp/"
     }
   }
 }

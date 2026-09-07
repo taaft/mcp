@@ -2,7 +2,7 @@
   "servers": {
     "taaft": {
       "type": "http",
-      "url": "https://theresanaiforthat.com/mcp-server/"
+      "url": "https://theresanaiforthat.com/mcp/"
     }
   }
 }

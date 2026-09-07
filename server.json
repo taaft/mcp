@@ -3,7 +3,7 @@
   "name": "com.theresanaiforthat/taaft",
   "title": "There's An AI For That",
   "description": "Search TAAFT for AI tools and retrieve public tool details.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://theresanaiforthat.com/",
   "icons": [
     {
@@ -21,7 +21,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://theresanaiforthat.com/mcp-server/"
+      "url": "https://theresanaiforthat.com/mcp/"
     }
   ]
 }
