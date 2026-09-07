@@ -42,6 +42,28 @@ describe("HTTP server", () => {
       });
       assert.equal(initialize.status, 200);
       assert.match(await initialize.text(), /"serverInfo":\{"name":"taaft"/);
+
+      const tools = await fetch(`${baseUrl}/mcp`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/event-stream",
+          "Content-Type": "application/json",
+          "MCP-Protocol-Version": "2025-11-25",
+        },
+        body: JSON.stringify({
+          jsonrpc: "2.0",
+          id: 2,
+          method: "tools/list",
+          params: {},
+        }),
+      });
+      assert.equal(tools.status, 200);
+      const toolsBody = await tools.text();
+      assert.match(toolsBody, /"name":"search_tools","title":"Search tools"/);
+      assert.match(
+        toolsBody,
+        /"name":"get_tool","title":"Get tool details"/,
+      );
     } finally {
       await new Promise<void>((resolve, reject) =>
         server.close((error) => (error ? reject(error) : resolve())),

@@ -45,7 +45,7 @@ export function createTaaftMcpServer(client: TaaftClient): McpServer {
   server.registerTool(
     "search_tools",
     {
-      title: "Search AI tools",
+      title: "Search tools",
       description: "Search the TAAFT directory for AI tools that match a query.",
       inputSchema: z.object({
         query: z
@@ -86,7 +86,7 @@ export function createTaaftMcpServer(client: TaaftClient): McpServer {
   server.registerTool(
     "get_tool",
     {
-      title: "Get AI tool details",
+      title: "Get tool details",
       description: "Get public details for one TAAFT AI tool by slug.",
       inputSchema: z.object({
         slug: z
