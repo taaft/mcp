@@ -1,7 +1,7 @@
 {
   "name": "taaft",
   "version": "1.0.1",
-  "description": "Search TAAFT for AI tools and retrieve public tool details.",
+  "description": "Search TAAFT for AI tools, MCP servers, and catalog entities, and retrieve public details.",
   "author": {
     "name": "There's An AI For That",
     "email": "razvan@theresanaiforthat.com",
@@ -19,8 +19,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "There's An AI For That",
-    "shortDescription": "Find the right AI tool for any task.",
-    "longDescription": "Search the TAAFT directory and retrieve structured public details for matching AI tools.",
+    "shortDescription": "Discover AI tools, MCP servers, models, and more.",
+    "longDescription": "Search TAAFT and retrieve structured public details for AI tools, MCP servers, tasks, models, companies, robots, devices, organizations, investors, countries, events, fundraising rounds, research papers, and repositories.",
     "developerName": "There's An AI For That",
     "category": "Productivity",
     "capabilities": [
@@ -31,7 +31,8 @@
     "termsOfServiceURL": "https://theresanaiforthat.com/terms/",
     "defaultPrompt": [
       "Find the best AI tools for this task.",
-      "Look up details for an AI tool from TAAFT."
+      "Find MCP servers that can help with this task.",
+      "Look up details for an AI model, company, or repository on TAAFT."
     ],
     "brandColor": "#F26B38"
   }

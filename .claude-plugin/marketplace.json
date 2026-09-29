@@ -1,6 +1,6 @@
 {
   "name": "taaft-plugins",
-  "description": "Official TAAFT plugins for discovering AI tools.",
+  "description": "Official TAAFT plugins for discovering AI tools, MCP servers, and catalog entities.",
   "owner": {
     "name": "There's An AI For That",
     "email": "razvan@theresanaiforthat.com"
@@ -9,7 +9,7 @@
     {
       "name": "taaft",
       "source": "./plugins/claude/taaft",
-      "description": "Search TAAFT for AI tools and retrieve public tool details.",
+      "description": "Search TAAFT for AI tools, MCP servers, and catalog entities, and retrieve public details.",
       "version": "1.0.1"
     }
   ]

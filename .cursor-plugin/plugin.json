@@ -2,7 +2,7 @@
   "name": "taaft",
   "displayName": "There's An AI For That",
   "version": "1.0.1",
-  "description": "Find the latest and best AI tools, models, and repositories from TAAFT.",
+  "description": "Search TAAFT for AI tools, MCP servers, and catalog entities, and retrieve public details.",
   "author": {
     "name": "There's An AI For That",
     "email": "razvan@theresanaiforthat.com"

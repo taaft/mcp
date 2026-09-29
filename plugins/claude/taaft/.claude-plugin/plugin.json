@@ -1,7 +1,7 @@
 {
   "name": "taaft",
   "version": "1.0.1",
-  "description": "Search TAAFT for AI tools and retrieve public tool details.",
+  "description": "Search TAAFT for AI tools, MCP servers, and catalog entities, and retrieve public details.",
   "author": {
     "name": "There's An AI For That",
     "email": "razvan@theresanaiforthat.com"
